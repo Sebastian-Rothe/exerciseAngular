@@ -1,6 +1,6 @@
 <div>
-    @for(post of posts; track post){
-        <app-single-post [post]="post"></app-single-post>
+    @for(post of posts; track $index){
+        <app-single-post [post]="post" (newCommentOutput)=" addComment($event, $index)"></app-single-post>
     }
 </div>
 <h2><a routerLink="/contact"></a></h2>

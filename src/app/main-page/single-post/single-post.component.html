@@ -5,8 +5,12 @@
     alt="Like" 
     (click)="toggleLike(post)" >
     <p>Likes: {{ post.likes }}</p>
+    <p>Likes: {{ post.comments }}</p>
     <div>
-        <input type="text">
-        <button>send</button>
+        <input [(ngModel)]="comment" type="text">
+        <button (click)="addNewComment()">send</button>
+        @for(comment of post.comments; track $index){
+            <span> Comment: {{ comment }} </span>
+        }
     </div>
 </div>

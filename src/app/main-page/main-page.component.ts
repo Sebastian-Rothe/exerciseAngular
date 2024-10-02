@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PostInterface } from '../interfaces/post.interface';
 import { SinglePostComponent } from './single-post/single-post.component';
+import { SubscribersService } from '../services/subscribers.service';
+import { SingleSubscriberComponent } from './single-subscriber/single-subscriber.component';
 
 @Component({
   selector: 'app-main-page',
   standalone: true,
-  imports: [SinglePostComponent],
+  imports: [SinglePostComponent, SingleSubscriberComponent],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.scss',
 })
@@ -33,6 +35,9 @@ export class MainPageComponent {
       comments: ['12423564', 'khkjhk'],
     },
   ];
+
+  subscribers = inject(SubscribersService);
+
 
   addComment(newComment: string, i: number) {
     if (!this.posts[i].comments) {

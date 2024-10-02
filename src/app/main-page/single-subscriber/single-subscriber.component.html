@@ -1,0 +1,15 @@
+
+@for(subscriber of subscribers.subscribers; track $index){
+    <div>
+        <span>{{ subscribers.subscribers[$index].name}}</span>
+        @if(subscribers.subscribers[$index].followed == true){
+            <span>is followed</span>
+        }
+        @if(subscribers.subscribers[$index].followsYou == true){
+            <span>follows you</span>
+        }@else {
+            <span>does not follow you</span>
+        }
+  
+    </div>
+}

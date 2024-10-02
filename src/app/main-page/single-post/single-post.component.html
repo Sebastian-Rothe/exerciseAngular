@@ -5,7 +5,7 @@
     alt="Like" 
     (click)="toggleLike(post)" >
     <p>Likes: {{ post.likes }}</p>
-    <p>Likes: {{ post.comments }}</p>
+ 
     <div>
         <input [(ngModel)]="comment" type="text">
         <button (click)="addNewComment()">send</button>

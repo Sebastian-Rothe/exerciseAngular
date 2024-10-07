@@ -7,3 +7,16 @@ div{
     flex-direction: column;
     width: 300px;
 }
+
+.text {
+    font-size: 16px;
+    color: black; 
+  
+    &.followed {
+      color: rgb(53, 228, 53); 
+    }
+  
+    &.not-followed {
+      color: red; 
+    }
+  }

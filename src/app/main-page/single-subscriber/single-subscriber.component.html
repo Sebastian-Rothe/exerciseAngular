@@ -1,15 +1,14 @@
-
 @for(subscriber of subscribers.subscribers; track $index){
-    <div>
-        <span>{{ subscribers.subscribers[$index].name}}</span>
-        @if(subscribers.subscribers[$index].followed == true){
-            <span>is followed</span>
-        }
-        @if(subscribers.subscribers[$index].followsYou == true){
-            <span>follows you</span>
-        }@else {
-            <span>does not follow you</span>
-        }
-  
-    </div>
+<div (click)="toggleFollow($index)">
+  <span>{{ subscriber.name }}</span>
+
+  <span
+    class="text"
+    [ngClass]="{
+      followed: subscriber.followed,
+      'not-followed': !subscriber.followed
+    }">
+    {{ subscriber.followed ? "is followed" : "is not followed" }}
+  </span>
+</div>
 }
